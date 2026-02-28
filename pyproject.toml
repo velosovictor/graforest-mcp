@@ -43,8 +43,8 @@ dev = [
 [project.urls]
 Homepage = "https://graforest.ai"
 Documentation = "https://graforest.ai/docs"
-Repository = "https://github.com/velosovictor/graforest-mcp"
-Issues = "https://github.com/velosovictor/graforest-mcp/issues"
+Repository = "https://github.com/graforest/graforest-mcp"
+Issues = "https://github.com/graforest/graforest-mcp/issues"
 
 [project.scripts]
 graforest-mcp = "graforest_mcp:main"
