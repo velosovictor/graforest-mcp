@@ -141,6 +141,45 @@ The AI does the thinking. Graforest stores the results.
 
 ---
 
+## Cloud Deployment (LogicBlok Module)
+
+Graforest MCP deploys as a **LogicBlok module** through the [RationalBloks](https://rationalbloks.com) platform. No kubectl, Docker CLI, or cluster access needed.
+
+### Deploy via RationalBloks UI
+
+1. Log in at [infra.rationalbloks.com](https://infra.rationalbloks.com)
+2. Select the Graforest project → **Modules** → **Deploy Module**
+3. Settings:
+   - **Name**: `graforest-mcp`
+   - **Type**: `logicblok`
+   - **Repo**: `https://github.com/graforest/graforest-mcp`
+   - **Dockerfile**: `Dockerfile` (root of repo)
+4. Set environment variables:
+   - `GRAFOREST_RB_API_KEY` — Graforest service account key (`rb_sk_...`)
+   - `RATIONALBLOKS_MCP_URL` — `https://logicblok.rationalbloks.com`
+   - `TRANSPORT` — `http`
+   - `HOST` — `0.0.0.0`
+5. Deploy. The platform handles: clone → build → push → K8s → TLS.
+
+### What the Platform Creates
+
+| Resource | Value |
+|----------|-------|
+| Namespace | `customer-{project_code}-staging` |
+| Domain | `{module_code}-mod.customersblok.rationalbloks.com` |
+| Port | `8000` with `/health` probes |
+| TLS | Auto-provisioned by cert-manager |
+
+### Dockerfile
+
+The included `Dockerfile` meets the LogicBlok module contract:
+- Port 8000
+- `/health` endpoint
+- Non-root user (UID 1000)
+- Multi-stage build with UV dependency caching
+
+---
+
 ## Architecture
 
 ```
