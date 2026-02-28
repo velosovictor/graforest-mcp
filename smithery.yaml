@@ -1,0 +1,36 @@
+# Graforest MCP Server - Smithery Configuration
+# Knowledge graph tools for AI agents
+# One-click installation: npx @smithery/cli install @graforest/mcp
+
+name: graforest
+displayName: Graforest
+version: 0.1.0
+description: Knowledge graph tools for AI agents. 13 tools for creating, populating, searching, and exploring knowledge graphs.
+author: Graforest
+homepage: https://graforest.ai
+repository: https://github.com/graforest/graforest-mcp
+icon: https://graforest.ai/logo.svg
+documentation: https://graforest.ai/docs/mcp
+
+# Configuration schema for Smithery UI
+configSchema:
+  type: object
+  title: Graforest Configuration
+  required: []
+  properties:
+    apiKey:
+      type: string
+      title: API Key
+      description: Your Graforest API key (get it from graforest.ai/settings)
+      default: ""
+
+startCommand:
+  type: stdio
+  command: uvx
+  args:
+    - graforest-mcp
+  env:
+    GRAFOREST_API_KEY:
+      description: "Your Graforest API Key (get it from graforest.ai/settings)"
+      required: false
+      default: ""
