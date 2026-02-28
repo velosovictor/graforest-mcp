@@ -8,7 +8,7 @@ version: 0.1.0
 description: Knowledge graph tools for AI agents. 13 tools for creating, populating, searching, and exploring knowledge graphs.
 author: Graforest
 homepage: https://graforest.ai
-repository: https://github.com/graforest/graforest-mcp
+repository: https://github.com/velosovictor/graforest-mcp
 icon: https://graforest.ai/logo.svg
 documentation: https://graforest.ai/docs/mcp
 
@@ -32,5 +32,5 @@ startCommand:
   env:
     GRAFOREST_API_KEY:
       description: "Your Graforest API Key (get it from graforest.ai/settings)"
-      required: false
+      required: true
       default: ""

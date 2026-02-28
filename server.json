@@ -4,7 +4,7 @@
   "title": "Graforest",
   "description": "Knowledge graph tools for AI agents. 13 tools: create, populate, search, traverse, and explore knowledge graphs.",
   "repository": {
-    "url": "https://github.com/graforest/graforest-mcp",
+    "url": "https://github.com/velosovictor/graforest-mcp",
     "source": "github"
   },
   "version": "0.1.0",

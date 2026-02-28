@@ -150,10 +150,10 @@ AI Agent → graforest-mcp → Graph APIs (Neo4j)
 
 ## License
 
-MIT License — see [LICENSE](LICENSE) for details.
+Proprietary — see [LICENSE](LICENSE) for details.
 
 ## Links
 
 - Website: [graforest.ai](https://graforest.ai)
 - Documentation: [graforest.ai/docs](https://graforest.ai/docs)
-- GitHub: [github.com/graforest/graforest-mcp](https://github.com/graforest/graforest-mcp)
+- GitHub: [github.com/velosovictor/graforest-mcp](https://github.com/velosovictor/graforest-mcp)
