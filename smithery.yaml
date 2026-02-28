@@ -4,7 +4,7 @@
 
 name: graforest
 displayName: Graforest
-version: 0.1.0
+version: 0.1.1
 description: Knowledge graph tools for AI agents. 13 tools for creating, populating, searching, and exploring knowledge graphs.
 author: Graforest
 homepage: https://graforest.ai

@@ -14,7 +14,7 @@ FROM ghcr.io/astral-sh/uv:python3.11-bookworm-slim AS base
 
 LABEL maintainer="Graforest Platform"
 LABEL description="graforest-mcp — Knowledge Graph MCP Server (HTTP/SSE transport)"
-LABEL version="0.1.0"
+LABEL version="0.1.1"
 
 # Security: non-root user with UID/GID 1000 (LogicBlok standard)
 RUN groupadd -r -g 1000 mcpuser && useradd -r -u 1000 -g mcpuser mcpuser

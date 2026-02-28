@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "graforest-mcp"
-version = "0.1.0"
+version = "0.1.1"
 mcpName = "io.github.graforest/graforest-mcp"
 description = "Graforest MCP Server — Build, populate, and query Knowledge Graphs with AI. 13 tools for knowledge ingestion, search, traversal, and graph management."
 readme = "README.md"
