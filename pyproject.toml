@@ -5,6 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "graforest-mcp"
 version = "0.1.0"
+mcpName = "io.github.graforest/graforest-mcp"
 description = "Graforest MCP Server — Build, populate, and query Knowledge Graphs with AI. 13 tools for knowledge ingestion, search, traversal, and graph management."
 readme = "README.md"
 license = {text = "Proprietary"}
@@ -31,7 +32,6 @@ dependencies = [
     "starlette>=0.41.0",
     "uvicorn>=0.32.0",
     "sse-starlette>=2.1.0",
-    "pydantic>=2.0.0",
 ]
 
 [project.optional-dependencies]
@@ -44,6 +44,7 @@ dev = [
 Homepage = "https://graforest.ai"
 Documentation = "https://graforest.ai/docs"
 Repository = "https://github.com/velosovictor/graforest-mcp"
+Issues = "https://github.com/velosovictor/graforest-mcp/issues"
 
 [project.scripts]
 graforest-mcp = "graforest_mcp:main"

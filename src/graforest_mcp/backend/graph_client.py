@@ -172,7 +172,7 @@ class GraphClient:
         limit: int = 50,
         offset: int = 0,
     ) -> list[dict[str, Any]]:
-        """List entities. Normalizes: adds id = entity_id."""
+        """List entities. Normalizes via _normalize_node for consistency."""
         client = await self._get_client()
         base = self._resolve_url(project_code, environment)
         resp = await client.get(
@@ -181,7 +181,7 @@ class GraphClient:
             headers=self._headers(token),
         )
         resp.raise_for_status()
-        return [{"id": item.get("entity_id", ""), **item} for item in resp.json()]
+        return [self._normalize_node(item) for item in resp.json()]
 
     async def get_entity(
         self,
@@ -191,7 +191,7 @@ class GraphClient:
         entity_type: str,
         entity_id: str,
     ) -> dict[str, Any]:
-        """Get single entity. Normalizes: adds id = entity_id."""
+        """Get single entity. Normalizes via _normalize_node for consistency."""
         client = await self._get_client()
         base = self._resolve_url(project_code, environment)
         resp = await client.get(
@@ -199,9 +199,7 @@ class GraphClient:
             headers=self._headers(token),
         )
         resp.raise_for_status()
-        data = resp.json()
-        data["id"] = data.get("entity_id", entity_id)
-        return data
+        return self._normalize_node(resp.json())
 
     async def list_relationships(
         self,
@@ -335,6 +333,7 @@ class GraphClient:
         label = path.split(":")[-1] if path else "Unknown"
         return {
             "id": entity_id,
+            "entity_type": label,
             "labels": [label],
             "properties": {**node_data, "id": entity_id},
         }
